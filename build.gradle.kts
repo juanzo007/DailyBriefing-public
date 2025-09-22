@@ -1,28 +1,6 @@
-/*
- * Root build.gradle.kts
- * Plays a sound after successful builds on Windows (PowerShell).
- */
-
-val buildSuccessSound = tasks.register(
-    "buildSuccessSound",
-    org.gradle.api.tasks.Exec::class
-) {
-    doFirst { println("✅ Build complete — pumping INXS low end now...") }
-    commandLine("powershell", "-c", "[console]::Beep(100,500)")
-}
-
-listOf(
-    "build",
-    "assemble",
-    "assembleDebug",
-    "assembleRelease",
-    "bundleDebug",
-    "bundleRelease",
-    "test",
-    "testDebugUnitTest",
-    "testReleaseUnitTest"
-).forEach { t ->
-    tasks.matching { it.name == t }.configureEach {
-        finalizedBy(buildSuccessSound)
-    }
+﻿// ROOT build.gradle.kts — explicit plugin IDs (no version catalog)
+plugins {
+    id("com.android.application") version "8.7.2" apply false
+    id("org.jetbrains.kotlin.android") version "2.0.0" apply false
+    id("org.jetbrains.kotlin.plugin.compose") version "2.0.0" apply false
 }
