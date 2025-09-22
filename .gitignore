@@ -1,0 +1,30 @@
+# Gradle
+.gradle/
+build/
+
+# Local config
+/local.properties
+
+# IDE
+.idea/
+*.iml
+
+# Log/OS
+*.log
+.DS_Store
+Thumbs.db
+
+# Android/Generated
+captures/
+output.json
+app/release/
+
+# Jetpack Compose previews
+*.preview.png
+
+# Keystore
+*.jks
+*.keystore
+
+# Virtual envs
+.venv/
