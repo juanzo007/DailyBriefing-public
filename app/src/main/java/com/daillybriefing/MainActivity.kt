@@ -10,11 +10,17 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.daillybriefing.worker.BriefScheduler
+import com.daillybriefing.util.NotificationHelper
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent { DailyBriefingApp() }
+
+        BriefScheduler.schedule(this)
+        // Optional demo notification:
+        // NotificationHelper.showBriefNotification(this, "Daily Briefing", "Your update is ready")
     }
 }
 
