@@ -1,4 +1,4 @@
-package com.daillybriefing.util
+package com.dailybriefing.util
 
 import android.app.NotificationChannel
 import android.app.NotificationManager
@@ -6,7 +6,7 @@ import android.content.Context
 import android.os.Build
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
-import com.daillybriefing.R
+import com.dailybriefing.R
 
 object NotificationHelper {
     private const val CHANNEL_ID = "daily_briefing_channel"

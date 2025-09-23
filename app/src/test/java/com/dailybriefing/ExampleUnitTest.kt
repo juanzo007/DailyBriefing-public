@@ -1,4 +1,4 @@
-package com.daillybriefing
+package com.dailybriefing
 
 import org.junit.Test
 
