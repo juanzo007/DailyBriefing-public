@@ -7,6 +7,7 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import com.dailybriefing.worker.BriefScheduler
 
+
 class MainActivity : AppCompatActivity() {
 
     private val requestNotif =
@@ -15,6 +16,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
 
         // Schedule the daily job (idempotent)
         BriefScheduler.scheduleDailyAt5am(this)

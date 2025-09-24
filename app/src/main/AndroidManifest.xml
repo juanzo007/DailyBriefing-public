@@ -1,27 +1,17 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <!-- Runtime permission for Android 13+ notifications -->
-    <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
-    <!-- To reschedule after reboot -->
-    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="DailyBriefing"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Material3.DayNight.NoActionBar">
-        android:name=".App"
+        android:theme="@style/Theme.DailyBriefing">
 
         <activity
             android:name=".MainActivity"
             android:exported="true">
-            android:name=".App"
-            android:allowBackup="true"
-            android:icon="@mipmap/ic_launcher"
-            android:label="DailyBriefing"
-            android:supportsRtl="true"
-            android:theme="@style/Theme.Material3.DayNight.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
@@ -37,19 +27,16 @@
             </intent-filter>
         </receiver>
 
-        <!-- Home screen widget provider -->
         <receiver
-            android:name=".widget.BriefWidgetProvider"
+            android:name=".widget.DailyBriefingWidgetProvider"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
             </intent-filter>
             <meta-data
                 android:name="android.appwidget.provider"
-                android:resource="@xml/brief_widget_info"/>
+                android:resource="@xml/daily_briefing_widget_info"/>
         </receiver>
 
     </application>
-
-
 </manifest>
