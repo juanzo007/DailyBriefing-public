@@ -60,3 +60,4 @@ Thumbs.db
 
 # VSCode (if used alongside Android Studio)
 .vscode/
+.kotlin/
