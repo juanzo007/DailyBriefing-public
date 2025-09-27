@@ -1,3 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="widget_daily_briefing_description">Daily Briefing home-screen widget</string>
+    <string name="app_name">DailyBriefing</string>
+
+    <!-- Replace with your Web client ID from Cloud Console (OAuth client type: Web) -->
+    <!-- Used for Google ID token audience; recommended in docs. -->
+    <string name="server_client_id">YOUR_WEB_CLIENT_ID.apps.googleusercontent.com</string>
+
+    <!-- Scopes you intend to use in Phase 4 -->
+    <string name="scope_gmail_readonly">https://www.googleapis.com/auth/gmail.readonly</string>
+    <string name="scope_calendar_readonly">https://www.googleapis.com/auth/calendar.readonly</string>
+    <string name="empty_widget">No items yet</string>
 </resources>

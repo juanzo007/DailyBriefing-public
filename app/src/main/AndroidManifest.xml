@@ -1,16 +1,21 @@
+<!-- app/src/main/AndroidManifest.xml -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.READ_CALENDAR"/>
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
 
     <application
+        android:name=".App"
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
         android:label="DailyBriefing"
         android:supportsRtl="true"
         android:theme="@style/Theme.DailyBriefing">
 
+        <!-- OAuth Sign-in entry screen -->
         <activity
-            android:name=".MainActivity"
+            android:name=".auth.OAuthSignInActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -18,25 +23,22 @@
             </intent-filter>
         </activity>
 
-        <receiver
-            android:name=".worker.BootReceiver"
-            android:enabled="true"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.BOOT_COMPLETED"/>
-            </intent-filter>
-        </receiver>
+        <!-- Widget provider (AppWidgetProvider) -->
+        <service
+            android:name=".widget.BriefWidgetService"
+            android:permission="android.permission.BIND_REMOTEVIEWS"
+            android:exported="false" />
 
         <receiver
-            android:name=".widget.DailyBriefingWidgetProvider"
-            android:exported="true">
+            android:name=".widget.DailyBriefingAppWidget"
+            android:exported="false">
             <intent-filter>
-                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
             </intent-filter>
             <meta-data
                 android:name="android.appwidget.provider"
-                android:resource="@xml/daily_briefing_widget_info"/>
-        </receiver>
+                android:resource="@xml/daily_briefing_widget_info" />
+        </receiver><!-- Your existing activities… -->
 
     </application>
 </manifest>

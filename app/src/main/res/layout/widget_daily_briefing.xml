@@ -1,24 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/widget_root"
+    android:id="@+id/widgetRoot"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="horizontal"
-    android:padding="12dp"
-    android:gravity="center_vertical">
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="8dp">
 
     <TextView
-        android:id="@+id/widget_title"
-        android:layout_width="0dp"
+        android:id="@+id/header"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="Daily Briefing"
+        android:text="@string/app_name"
         android:textStyle="bold"
-        android:textSize="18sp" />
+        android:textSize="18sp"
+        android:paddingBottom="6dp" />
+
+    <ListView
+        android:id="@+id/brief_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:dividerHeight="6dp"
+        android:scrollbars="vertical" />
 
     <TextView
-        android:id="@+id/widget_status"
-        android:layout_width="wrap_content"
+        android:id="@+id/empty_view"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Phase 2 complete" />
+        android:text="@string/empty_widget"
+        android:visibility="gone"
+        android:paddingTop="8dp" />
 </LinearLayout>
